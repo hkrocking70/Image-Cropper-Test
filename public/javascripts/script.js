@@ -26,6 +26,7 @@ $(document).ready(function() {
     });
 
     $('.submitBox').submit(function(e) {
+        $(".uploadMsg").show();
         $(".newImage").empty();
         $(".croppingView").empty();
         var formData = new FormData(this);
@@ -38,6 +39,7 @@ $(document).ready(function() {
             processData: false,
 
             success: function(data) {
+                $(".uploadMsg").hide();
                 $(".croppingView").append("<br><br><br><img src='/images/"+data + "' width='30%' class='cropImage'>");
                 $(".croppingView").append("<div style='width: 100px; height: 100px; position; absolute; background: rgba(255, 255, 255, 0.5); z-index: 5; left: 50%; top: -50%; margin-top: 0;' class='draggabale'></div>")
                 $(".croppingView").append("<br><button class='cropButton'>Crop It</button>")
