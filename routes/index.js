@@ -1,11 +1,9 @@
 var express = require('express');
-var sizeOf = require('image-size');
 var multer = require('multer');
 var path = require('path');
 var crypto = require('crypto');
 var router = express.Router();
 var fs = require('fs');
-var easyimg = require('easyimage');
 var im = require('imagemagick');
 var gm = require("gm");
 
