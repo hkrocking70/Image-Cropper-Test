@@ -14,6 +14,7 @@ $(document).ready(function() {
                 if (this.width == 1024 && this.height == 1024) {
                     $(".submitButton").show();
                 } else {
+                    alert("Wrong Size. Recommended is 1024 x 1024.");
                     $(".submitButton").hide();
                 }
             };
@@ -75,10 +76,15 @@ $(document).ready(function() {
                 $(".croppingView").hide();
                 window.setTimeout(function() {
                     $(".cropMsg").hide();
-                    $(".newImage").append("<img src='/images/" + data.base + data.ext + "' width='40%'><br>")
-                    $(".newImage").append("<img src='/images/" + data.base + "/" + data.base + "_755_450" + data.ext + "' width='40%'><br>")
+                    $(".newImage").append("<p>Original Image</p>");
+                    $(".newImage").append("<img src='/images/" + data.base + data.ext + "' width='40%'>")
+                    $(".newImage").append("<p>755 x 450 Image</p>");
+                    $(".newImage").append("<img src='/images/" + data.base + "/" + data.base + "_755_450" + data.ext + "' width='40%'>")
+                    $(".newImage").append("<p>365 x 450 Image</p>");
                     $(".newImage").append("<img src='/images/" + data.base + "/" + data.base + "_365_450" + data.ext + "' width='40%'><br>")
+                    $(".newImage").append("<p>365 x 212 Image</p>");
                     $(".newImage").append("<img src='/images/" + data.base + "/" + data.base + "_365_212" + data.ext + "' width='40%'><br>")
+                    $(".newImage").append("<p>380 x 380 Image</p>");
                     $(".newImage").append("<img src='/images/" + data.base + "/" + data.base + "_380_380" + data.ext + "' width='40%'><br>")
                 }, 5000);
             }
